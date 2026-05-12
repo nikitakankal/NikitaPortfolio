@@ -1,270 +1,153 @@
-export default function Portfolio() {
-  const skills = [
-    'Manual Testing',
-    'Automation Testing',
-    'Performance Testing',
-    'Selenium WebDriver',
-    'Java',
-    'TestNG',
-    'JMeter',
-    'JIRA',
-    'Git',
-    'Bitbucket',
-    'Confluence',
-    'qTest',
-    'POM',
-    'Agile',
-    'Backend Verification',
-    'Playwright',
-    'AWS EC2',
-    'AWS S3',
-    'AWS IAM',
-    'AWS CloudWatch'
-  ];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nikita Kankal | QA Engineer</title>
 
-  const experience = [
-    {
-      company: 'Tata Consultancy Services (TCS)',
-      role: 'Senior Software Engineer',
-      duration: 'Aug 2022 - Present',
-      points: [
-        'Developed automated test scripts to streamline repetitive software testing tasks.',
-        'Managed Bitbucket repositories in a 20-member agile team.',
-        'Performed sanity, usability, functional, integration, and UAT testing.',
-        'Created detailed test cases using qTest and maintained Confluence documentation.',
-        'Oversaw bug lifecycle management and validated fixes with development teams.'
-      ]
-    },
-    {
-      company: 'Addnode India Pvt. Ltd.',
-      role: 'Manual / Automation Tester',
-      duration: 'Apr 2019 - Aug 2022',
-      points: [
-        'Automated web-based PLM application testing for 3DEXPERIENCE projects.',
-        'Executed regression suites and backend verifications.',
-        'Performed peer reviews for multiple enterprise clients including Toyota and H&M.',
-        'Enhanced automation throughput with scalable Selenium frameworks.'
-      ]
-    },
-    {
-      company: 'Softeligent Technologies Pvt. Ltd.',
-      role: 'Manual / Automation Tester',
-      duration: 'May 2018 - Apr 2019',
-      points: [
-        'Developed and maintained automation scripts for BPCL project.',
-        'Executed performance testing using JMeter.',
-        'Managed defects in JIRA and coordinated client communications.',
-        'Designed and executed test cases for healthcare applications.'
-      ]
-    },
-    {
-      company: 'Synergiene Solutions',
-      role: 'Manual / Automation Tester',
-      duration: 'Oct 2017 - Apr 2018',
-      points: [
-        'Conducted compatibility testing across multiple iOS versions.',
-        'Authored detailed test scripts and tracked defect resolution.',
-        'Collaborated with business teams for requirement validation.'
-      ]
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
     }
-  ];
 
-  return (
-    <div className="min-h-screen bg-black text-white font-sans">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-zinc-800">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-black to-cyan-900/20"></div>
+    body{
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
 
-        <div className="relative max-w-7xl mx-auto px-6 py-24 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <div>
-              <p className="uppercase tracking-[0.3em] text-zinc-400 text-sm mb-5">
-                Senior QA Engineer
-              </p>
+    header{
+      padding:60px 20px;
+      text-align:center;
+      background:#111827;
+    }
 
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
-                Nikita M. <span className="text-purple-400">Kankal</span>
-              </h1>
+    header h1{
+      font-size:48px;
+      color:#8b5cf6;
+    }
 
-              <p className="text-zinc-300 text-lg leading-8 max-w-2xl mb-8">
-                Experienced QA professional with 8+ years of expertise in Manual,
-                Automation, and Performance Testing across enterprise web,
-                middleware, Android, and iOS applications.
-              </p>
+    header p{
+      margin-top:10px;
+      color:#cbd5e1;
+    }
 
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="mailto:nikitakankal88@gmail.com"
-                  className="px-6 py-3 rounded-2xl bg-purple-600 hover:bg-purple-500 transition-all"
-                >
-                  Contact Me
-                </a>
+    section{
+      padding:50px 20px;
+      max-width:1000px;
+      margin:auto;
+    }
 
-                <a
-                  href="tel:+917030237513"
-                  className="px-6 py-3 rounded-2xl border border-zinc-700 hover:border-zinc-500 transition-all"
-                >
-                  Call Now
-                </a>
-              </div>
-            </div>
+    h2{
+      margin-bottom:20px;
+      color:#8b5cf6;
+    }
 
-            <div className="relative">
-              <div className="rounded-[32px] border border-zinc-800 bg-zinc-900/70 backdrop-blur-xl p-8 shadow-2xl">
-                <div className="grid grid-cols-2 gap-5">
-                  <div className="p-5 rounded-2xl bg-zinc-800/60">
-                    <h3 className="text-3xl font-bold text-purple-400">8+</h3>
-                    <p className="text-zinc-400 mt-2">Years Experience</p>
-                  </div>
+    .skills{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
 
-                  <div className="p-5 rounded-2xl bg-zinc-800/60">
-                    <h3 className="text-3xl font-bold text-cyan-400">20+</h3>
-                    <p className="text-zinc-400 mt-2">Enterprise Projects</p>
-                  </div>
+    .skill{
+      background:#1e293b;
+      padding:10px 15px;
+      border-radius:8px;
+    }
 
-                  <div className="p-5 rounded-2xl bg-zinc-800/60">
-                    <h3 className="text-3xl font-bold text-green-400">Automation</h3>
-                    <p className="text-zinc-400 mt-2">Selenium & Playwright</p>
-                  </div>
+    .card{
+      background:#1e293b;
+      padding:20px;
+      border-radius:10px;
+      margin-bottom:20px;
+    }
 
-                  <div className="p-5 rounded-2xl bg-zinc-800/60">
-                    <h3 className="text-3xl font-bold text-orange-400">AWS</h3>
-                    <p className="text-zinc-400 mt-2">Cloud Basics</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111827;
+      color:#94a3b8;
+    }
 
-      {/* About */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div>
-            <p className="text-purple-400 uppercase tracking-[0.2em] text-sm mb-4">
-              About Me
-            </p>
+    a{
+      color:#8b5cf6;
+      text-decoration:none;
+    }
+  </style>
+</head>
 
-            <h2 className="text-4xl font-bold mb-6 leading-tight">
-              Delivering Quality Through Smart Testing Strategies
-            </h2>
+<body>
 
-            <p className="text-zinc-400 text-lg leading-8">
-              Highly skilled QA Engineer specializing in end-to-end testing,
-              automation framework development, backend validation, and
-              performance testing. Experienced in agile environments with
-              strong collaboration across QA, development, and business teams.
-            </p>
-          </div>
+  <header>
+    <h1>Nikita M. Kankal</h1>
+    <p>Senior QA Engineer | Automation Tester</p>
+  </header>
 
-          <div className="grid sm:grid-cols-2 gap-5">
-            {skills.map((skill, index) => (
-              <div
-                key={index}
-                className="rounded-2xl border border-zinc-800 bg-zinc-900/70 px-5 py-4 hover:border-purple-500 transition-all"
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+  <section>
+    <h2>About Me</h2>
+    <p>
+      Experienced QA Engineer with 8+ years in Manual Testing,
+      Automation Testing, Selenium, Playwright, and Performance Testing.
+    </p>
+  </section>
 
-      {/* Experience */}
-      <section className="bg-zinc-950 border-y border-zinc-800">
-        <div className="max-w-7xl mx-auto px-6 py-24">
-          <div className="mb-16">
-            <p className="text-cyan-400 uppercase tracking-[0.2em] text-sm mb-4">
-              Experience
-            </p>
+  <section>
+    <h2>Skills</h2>
 
-            <h2 className="text-4xl font-bold">Professional Journey</h2>
-          </div>
-
-          <div className="space-y-10">
-            {experience.map((job, index) => (
-              <div
-                key={index}
-                className="rounded-3xl border border-zinc-800 bg-black/60 p-8 hover:border-purple-600 transition-all"
-              >
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
-                  <div>
-                    <h3 className="text-2xl font-semibold">{job.role}</h3>
-                    <p className="text-purple-400 mt-2">{job.company}</p>
-                  </div>
-
-                  <div className="text-zinc-400">{job.duration}</div>
-                </div>
-
-                <ul className="space-y-3 text-zinc-300">
-                  {job.points.map((point, idx) => (
-                    <li key={idx} className="flex items-start gap-3">
-                      <span className="mt-2 h-2 w-2 rounded-full bg-purple-400"></span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/60 p-8">
-            <h3 className="text-3xl font-bold mb-6">Certifications</h3>
-
-            <div className="space-y-4 text-zinc-300">
-              <div className="p-4 rounded-2xl bg-black/40 border border-zinc-800">
-                Certified Scrum Master
-              </div>
-
-              <div className="p-4 rounded-2xl bg-black/40 border border-zinc-800">
-                Selenium WebDriver + TestNG + POM Automation
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-3xl border border-zinc-800 bg-zinc-900/60 p-8">
-            <h3 className="text-3xl font-bold mb-6">Education</h3>
-
-            <div className="space-y-6 text-zinc-300">
-              <div>
-                <h4 className="font-semibold text-white text-lg">
-                  Bachelor of Engineering in Computer Science & Engineering
-                </h4>
-                <p className="text-zinc-400 mt-2">SGBAU</p>
-              </div>
-
-              <div>
-                <h4 className="font-semibold text-white text-lg">
-                  Diploma in Computer Science & Engineering
-                </h4>
-                <p className="text-zinc-400 mt-2">MSBTE</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-zinc-800">
-        <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col md:flex-row items-center justify-between gap-5">
-          <div>
-            <h3 className="text-2xl font-bold">Nikita M. Kankal</h3>
-            <p className="text-zinc-400 mt-2">Senior QA Engineer | Automation Specialist</p>
-          </div>
-
-          <div className="text-zinc-400 text-center md:text-right">
-            <p>Pune, Maharashtra, India</p>
-            <p className="mt-2">nikitakankal88@gmail.com</p>
-            <p className="mt-1">+91 7030237513</p>
-          </div>
-        </div>
-      </footer>
+    <div class="skills">
+      <div class="skill">Selenium</div>
+      <div class="skill">Playwright</div>
+      <div class="skill">Java</div>
+      <div class="skill">TestNG</div>
+      <div class="skill">JMeter</div>
+      <div class="skill">AWS EC2</div>
+      <div class="skill">AWS S3</div>
+      <div class="skill">JIRA</div>
+      <div class="skill">Git</div>
     </div>
-  );
-}
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="card">
+      <h3>TCS - Senior Software Engineer</h3>
+      <p>Aug 2022 - Present</p>
+    </div>
+
+    <div class="card">
+      <h3>Addnode India Pvt. Ltd.</h3>
+      <p>Apr 2019 - Aug 2022</p>
+    </div>
+
+    <div class="card">
+      <h3>Softeligent Technologies</h3>
+      <p>May 2018 - Apr 2019</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+
+    <p>Email:
+      <a href="mailto:nikitakankal88@gmail.com">
+        nikitakankal88@gmail.com
+      </a>
+    </p>
+
+    <p>Phone:
+      <a href="tel:+917030237513">
+        +91 7030237513
+      </a>
+    </p>
+  </section>
+
+  <footer>
+    © 2026 Nikita Kankal | QA Portfolio
+  </footer>
+
+</body>
+</html>
