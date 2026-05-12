@@ -1,152 +1,562 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nikita Kankal | QA Engineer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nikita Kankal | Senior QA Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:Arial, sans-serif;
+      scroll-behavior:smooth;
     }
 
     body{
-      background:#0f172a;
+      font-family:'Poppins',sans-serif;
+      background:#050816;
       color:white;
-      line-height:1.6;
+      overflow-x:hidden;
     }
 
-    header{
-      padding:60px 20px;
-      text-align:center;
-      background:#111827;
+    a{
+      text-decoration:none;
+      color:white;
     }
 
-    header h1{
-      font-size:48px;
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      padding:20px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      background:rgba(5,8,22,0.7);
+      backdrop-filter:blur(10px);
+    }
+
+    nav h2{
+      font-size:24px;
       color:#8b5cf6;
     }
 
-    header p{
-      margin-top:10px;
-      color:#cbd5e1;
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
     }
+
+    nav ul li a:hover{
+      color:#8b5cf6;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:120px 8%;
+      gap:50px;
+    }
+
+    .hero-text{
+      flex:1;
+    }
+
+    .hero-text p{
+      color:#8b5cf6;
+      letter-spacing:3px;
+      margin-bottom:15px;
+    }
+
+    .hero-text h1{
+      font-size:65px;
+      line-height:80px;
+      margin-bottom:20px;
+    }
+
+    .hero-text h1 span{
+      color:#8b5cf6;
+    }
+
+    .hero-text h3{
+      font-weight:400;
+      color:#cbd5e1;
+      margin-bottom:25px;
+    }
+
+    .hero-text button{
+      padding:15px 30px;
+      border:none;
+      border-radius:10px;
+      background:#8b5cf6;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .hero-text button:hover{
+      transform:translateY(-3px);
+      background:#7c3aed;
+    }
+
+    .hero-image{
+      flex:1;
+      display:flex;
+      justify-content:center;
+    }
+
+    .circle{
+      width:350px;
+      height:350px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#8b5cf6,#2563eb);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 0 40px rgba(139,92,246,0.5);
+    }
+
+    .circle h2{
+      font-size:120px;
+    }
+
+    /* SECTION */
 
     section{
-      padding:50px 20px;
-      max-width:1000px;
-      margin:auto;
+      padding:100px 8%;
     }
 
-    h2{
-      margin-bottom:20px;
-      color:#8b5cf6;
+    .title{
+      text-align:center;
+      margin-bottom:60px;
     }
+
+    .title h2{
+      font-size:40px;
+      color:#8b5cf6;
+      margin-bottom:10px;
+    }
+
+    .title p{
+      color:#94a3b8;
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .about-card{
+      background:#111827;
+      padding:35px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .about-card p{
+      color:#cbd5e1;
+      line-height:28px;
+    }
+
+    /* SKILLS */
 
     .skills{
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
+      gap:15px;
+      justify-content:center;
     }
 
     .skill{
-      background:#1e293b;
-      padding:10px 15px;
-      border-radius:8px;
+      padding:14px 24px;
+      background:#111827;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.3s;
     }
 
-    .card{
-      background:#1e293b;
-      padding:20px;
-      border-radius:10px;
-      margin-bottom:20px;
+    .skill:hover{
+      background:#8b5cf6;
+      transform:translateY(-5px);
     }
+
+    /* EXPERIENCE */
+
+    .timeline{
+      position:relative;
+      max-width:900px;
+      margin:auto;
+    }
+
+    .timeline::after{
+      content:'';
+      position:absolute;
+      width:3px;
+      background:#8b5cf6;
+      top:0;
+      bottom:0;
+      left:50%;
+      margin-left:-1px;
+    }
+
+    .container{
+      padding:20px 40px;
+      position:relative;
+      width:50%;
+    }
+
+    .container.left{
+      left:0;
+    }
+
+    .container.right{
+      left:50%;
+    }
+
+    .content{
+      background:#111827;
+      padding:25px;
+      border-radius:15px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .content h3{
+      color:#8b5cf6;
+      margin-bottom:10px;
+    }
+
+    .content p{
+      color:#cbd5e1;
+      font-size:14px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact-box{
+      background:#111827;
+      padding:40px;
+      border-radius:20px;
+      max-width:700px;
+      margin:auto;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-box h3{
+      margin-bottom:20px;
+      font-size:28px;
+    }
+
+    .contact-box p{
+      color:#cbd5e1;
+      margin-bottom:10px;
+    }
+
+    .socials{
+      margin-top:25px;
+      display:flex;
+      justify-content:center;
+      gap:20px;
+    }
+
+    .socials a{
+      padding:12px 20px;
+      background:#8b5cf6;
+      border-radius:10px;
+      transition:0.3s;
+    }
+
+    .socials a:hover{
+      background:#7c3aed;
+    }
+
+    /* FOOTER */
 
     footer{
+      padding:25px;
       text-align:center;
-      padding:20px;
-      background:#111827;
       color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,0.08);
+      margin-top:60px;
     }
 
-    a{
-      color:#8b5cf6;
-      text-decoration:none;
+    /* MOBILE */
+
+    @media(max-width:900px){
+
+      nav ul{
+        display:none;
+      }
+
+      .hero{
+        flex-direction:column;
+        text-align:center;
+      }
+
+      .hero-text h1{
+        font-size:45px;
+        line-height:55px;
+      }
+
+      .circle{
+        width:250px;
+        height:250px;
+      }
+
+      .circle h2{
+        font-size:70px;
+      }
+
+      .about{
+        grid-template-columns:1fr;
+      }
+
+      .timeline::after{
+        left:20px;
+      }
+
+      .container{
+        width:100%;
+        padding-left:60px;
+        padding-right:20px;
+      }
+
+      .container.right{
+        left:0;
+      }
     }
+
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Nikita M. Kankal</h1>
-    <p>Senior QA Engineer | Automation Tester</p>
-  </header>
+  <!-- NAVBAR -->
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      Experienced QA Engineer with 8+ years in Manual Testing,
-      Automation Testing, Selenium, Playwright, and Performance Testing.
-    </p>
+  <nav>
+    <h2>Nikita.</h2>
+
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+
+  <div class="hero">
+
+    <div class="hero-text">
+
+      <p>SENIOR QA ENGINEER</p>
+
+      <h1>
+        Hi, I'm
+        <span>Nikita Kankal</span>
+      </h1>
+
+      <h3>
+        8+ Years Experience in Manual, Automation & Performance Testing
+      </h3>
+
+      <button>Download Resume</button>
+
+    </div>
+
+    <div class="hero-image">
+
+      <div class="circle">
+        <h2>QA</h2>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="title">
+      <h2>About Me</h2>
+      <p>Professional QA Automation Engineer</p>
+    </div>
+
+    <div class="about">
+
+      <div class="about-card">
+
+        <p>
+          Highly skilled QA Engineer with expertise in Automation Testing,
+          Selenium WebDriver, Playwright, Java, JMeter and backend validation.
+          Experienced in testing enterprise applications across healthcare,
+          PLM and commercial domains.
+        </p>
+
+      </div>
+
+      <div class="about-card">
+
+        <p>
+          Strong experience in Agile environments, defect lifecycle management,
+          test planning, regression testing, automation frameworks and cloud
+          basics including AWS EC2, S3, IAM and CloudWatch.
+        </p>
+
+      </div>
+
+    </div>
+
   </section>
 
-  <section>
-    <h2>Skills</h2>
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <div class="title">
+      <h2>Skills</h2>
+      <p>Tools & Technologies</p>
+    </div>
 
     <div class="skills">
+
       <div class="skill">Selenium</div>
       <div class="skill">Playwright</div>
       <div class="skill">Java</div>
       <div class="skill">TestNG</div>
       <div class="skill">JMeter</div>
-      <div class="skill">AWS EC2</div>
-      <div class="skill">AWS S3</div>
       <div class="skill">JIRA</div>
       <div class="skill">Git</div>
+      <div class="skill">Bitbucket</div>
+      <div class="skill">Confluence</div>
+      <div class="skill">Automation Testing</div>
+      <div class="skill">Performance Testing</div>
+      <div class="skill">AWS EC2</div>
+      <div class="skill">AWS S3</div>
+      <div class="skill">AWS IAM</div>
+      <div class="skill">CloudWatch</div>
+
     </div>
+
   </section>
 
-  <section>
-    <h2>Experience</h2>
+  <!-- EXPERIENCE -->
 
-    <div class="card">
-      <h3>TCS - Senior Software Engineer</h3>
-      <p>Aug 2022 - Present</p>
+  <section id="experience">
+
+    <div class="title">
+      <h2>Experience</h2>
+      <p>Professional Journey</p>
     </div>
 
-    <div class="card">
-      <h3>Addnode India Pvt. Ltd.</h3>
-      <p>Apr 2019 - Aug 2022</p>
+    <div class="timeline">
+
+      <div class="container left">
+        <div class="content">
+          <h3>TCS</h3>
+          <p>
+            Senior Software Engineer | Aug 2022 - Present
+          </p>
+        </div>
+      </div>
+
+      <div class="container right">
+        <div class="content">
+          <h3>Addnode India Pvt. Ltd.</h3>
+          <p>
+            Manual / Automation Tester | Apr 2019 - Aug 2022
+          </p>
+        </div>
+      </div>
+
+      <div class="container left">
+        <div class="content">
+          <h3>Softeligent Technologies</h3>
+          <p>
+            Manual / Automation Tester | May 2018 - Apr 2019
+          </p>
+        </div>
+      </div>
+
+      <div class="container right">
+        <div class="content">
+          <h3>Synergiene Solutions</h3>
+          <p>
+            Manual / Automation Tester | Oct 2017 - Apr 2018
+          </p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="card">
-      <h3>Softeligent Technologies</h3>
-      <p>May 2018 - Apr 2019</p>
-    </div>
   </section>
 
-  <section>
-    <h2>Contact</h2>
+  <!-- CONTACT -->
 
-    <p>Email:
-      <a href="mailto:nikitakankal88@gmail.com">
-        nikitakankal88@gmail.com
-      </a>
-    </p>
+  <section id="contact">
 
-    <p>Phone:
-      <a href="tel:+917030237513">
-        +91 7030237513
-      </a>
-    </p>
+    <div class="title">
+      <h2>Contact</h2>
+      <p>Let's Connect</p>
+    </div>
+
+    <div class="contact-box">
+
+      <h3>Get In Touch</h3>
+
+      <p>Email: nikitakankal88@gmail.com</p>
+
+      <p>Phone: +91 7030237513</p>
+
+      <p>Location: Pune, Maharashtra, India</p>
+
+      <div class="socials">
+
+        <a href="mailto:nikitakankal88@gmail.com">
+          Email
+        </a>
+
+        <a href="tel:+917030237513">
+          Call
+        </a>
+
+      </div>
+
+    </div>
+
   </section>
+
+  <!-- FOOTER -->
 
   <footer>
-    © 2026 Nikita Kankal | QA Portfolio
+    © 2026 Nikita Kankal | Senior QA Engineer Portfolio
   </footer>
 
 </body>
